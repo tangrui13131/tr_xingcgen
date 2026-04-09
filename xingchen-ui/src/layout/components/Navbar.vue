@@ -36,6 +36,7 @@
         <div class="avatar-wrapper">
           <img :src="avatar" class="user-avatar">
           <span class="user-nickname"> {{ nickName }} </span>
+          <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown">
           <router-link to="/user/profile">
@@ -147,11 +148,11 @@ export default {
   overflow: hidden;
   position: relative;
   background: #fff;
-  box-shadow: 0 1px 4px rgba(0,21,41,.08);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
-  // padding: 0 8px;
   box-sizing: border-box;
+  border-bottom: 1px solid #f0f0f0;
 
   .hamburger-container {
     line-height: 46px;
@@ -163,6 +164,7 @@ export default {
     align-items: center;
     flex-shrink: 0;
     margin-right: 8px;
+    padding: 0 12px;
 
     &:hover {
       background: rgba(0, 0, 0, .025)
@@ -217,35 +219,36 @@ export default {
     }
 
     .avatar-container {
-      margin-right: 0px;
+      margin-right: 12px;
       padding-right: 0px;
 
       .avatar-wrapper {
-        margin-top: 10px;
-        right: 8px;
-        position: relative;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        cursor: pointer;
+        padding: 0 4px;
+        transition: all 0.3s;
 
         .user-avatar {
-          cursor: pointer;
-          width: 30px;
-          height: 30px;
+          width: 32px;
+          height: 32px;
           border-radius: 50%;
+          border: 1px solid #f0f0f0;
+          margin-right: 8px;
         }
 
-        .user-nickname{
-          position: relative;
-          bottom: 10px;
-          left: 2px;
+        .user-nickname {
           font-size: 14px;
-          font-weight: bold;
+          font-weight: 500;
+          color: #333;
+          white-space: nowrap;
         }
 
         .el-icon-caret-bottom {
-          cursor: pointer;
-          position: absolute;
-          right: -20px;
-          top: 25px;
+          margin-left: 4px;
           font-size: 12px;
+          color: #999;
         }
       }
     }

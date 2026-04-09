@@ -7,6 +7,21 @@ import './assets/styles/element-variables.scss'
 
 import '@/assets/styles/index.scss' // global css
 import '@/assets/styles/xingchen.scss' // xingchen css
+
+// 强制刷新主题缓存（仅在检测到旧主题色时执行一次）
+const layoutSetting = localStorage.getItem('layout-setting')
+if (layoutSetting) {
+  try {
+    const setting = JSON.parse(layoutSetting)
+    if (setting.theme === '#1890ff' || setting.theme === '#409EFF' || setting.theme === '#324157') {
+      localStorage.removeItem('layout-setting')
+      localStorage.removeItem('tags-view-visited')
+    }
+  } catch (e) {
+    localStorage.removeItem('layout-setting')
+  }
+}
+
 import App from './App'
 import store from './store'
 import router from './router'

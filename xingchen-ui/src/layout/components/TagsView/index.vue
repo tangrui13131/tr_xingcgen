@@ -368,19 +368,21 @@ export default {
 
 <style lang="scss" scoped>
 .tags-view-container {
-  height: 34px;
+  height: 38px;
   width: 100%;
-  background: #fff;
-  border-bottom: 1px solid #d8dce5;
+  background: #f5f7fa;
+  border-bottom: 1px solid #e8eaf0;
   display: flex;
   align-items: center;
+  padding: 0 4px;
+  box-sizing: border-box;
 
-  $btn-width: 28px;
-  $btn-color: #71717a;
-  $btn-hover-bg: #f0f2f5;
-  $btn-hover-color: #303133;
+  $btn-width: 32px;
+  $btn-color: #606266;
+  $btn-hover-bg: rgba(0, 0, 0, 0.05);
+  $btn-hover-color: #333;
   $btn-disabled-color: #c0c4cc;
-  $divider: 1px solid #d8dce5;
+  $divider: 1px solid #e8eaf0;
 
   .tags-nav-btn {
     flex-shrink: 0;
@@ -422,15 +424,16 @@ export default {
       display: inline-block;
       position: relative;
       cursor: pointer;
-      height: 26px;
+      height: 28px;
       line-height: 26px;
-      border: 1px solid #d8dce5;
-      color: #495060;
+      border: 1px solid #e8eaf0;
+      color: #606266;
       background: #fff;
-      padding: 0 8px;
+      padding: 0 12px;
       font-size: 12px;
-      margin-left: 5px;
-      border-radius: 3px;
+      margin-left: 4px;
+      border-radius: 4px;
+      transition: all 0.3s;
 
       &:first-of-type {
         margin-left: 6px;
@@ -438,19 +441,25 @@ export default {
       &:last-of-type {
         margin-right: 15px;
       }
+      &:hover:not(.active) {
+        border-color: #dcdfe6;
+        color: #333;
+        background: #fdfdfd;
+      }
       &.active {
-        background-color: #42b983;
+        background-color: #00b96b;
         color: #fff;
-        border-color: #42b983;
+        border-color: #00b96b;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         &::before {
           content: '';
           background: #fff;
           display: inline-block;
-          width: 8px;
-          height: 8px;
+          width: 6px;
+          height: 6px;
           border-radius: 50%;
           position: relative;
-          margin-right: 2px;
+          margin-right: 4px;
         }
       }
     }

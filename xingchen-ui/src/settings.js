@@ -10,6 +10,11 @@ module.exports = {
   sideTheme: 'theme-dark',
 
   /**
+   * 默认主题色
+   */
+  theme: '#00b96b',
+
+  /**
    * 系统布局配置
    */
   showSettings: true,

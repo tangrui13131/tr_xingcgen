@@ -149,7 +149,7 @@ export default {
 }
 </script>
 
-<style rel="stylesheet/scss" lang="scss" scoped>
+<style rel="stylesheet/scss" lang="scss">
 .register {
   display: flex;
   justify-content: center;
@@ -168,7 +168,7 @@ export default {
   border-radius: 6px;
   background: #ffffff;
   width: 400px;
-  padding: 25px 25px 5px 25px;
+  padding: 25px 35px 15px 35px;
   .el-input {
     height: 38px;
     input {

@@ -1,0 +1,49 @@
+:root {
+  --bg-0: #FFF9F2;
+  --bg-1: #FFFFFF;
+  --primary: #7DB9B6;
+  --primary-hover: #96C8C5;
+  --primary-active: #66A3A0;
+  --primary-light: #E5F1F0;
+  --accent: #F2B880;
+  --text-1: #2F3A3A;
+  --text-2: #6B7A7A;
+  --line: #EAE2D8;
+  --success: #7FB77E;
+  --warning: #E6A23C;
+  --danger: #E57373;
+  --shadow-soft: 0 6px 18px rgba(47, 58, 58, 0.08);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-0);
+  color: var(--text-1);
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+}
+
+/* Element Plus Overrides */
+.el-button--primary {
+  --el-button-bg-color: var(--primary);
+  --el-button-border-color: var(--primary);
+  --el-button-hover-bg-color: var(--primary-hover);
+  --el-button-hover-border-color: var(--primary-hover);
+  --el-button-active-bg-color: var(--primary-active);
+  --el-button-active-border-color: var(--primary-active);
+}
+
+.el-card {
+  --el-card-border-radius: 16px;
+  --el-card-border-color: transparent;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.el-input {
+  --el-input-border-radius: 12px;
+}
+
+.el-form-item__label {
+  color: var(--text-1);
+  font-weight: 600;
+}

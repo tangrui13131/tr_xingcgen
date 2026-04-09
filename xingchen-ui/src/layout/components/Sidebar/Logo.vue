@@ -59,9 +59,9 @@ export default {
   position: relative;
   height: 50px;
   line-height: 50px;
-  background: #2b2f3a;
   text-align: center;
   overflow: hidden;
+  transition: background-color 0.3s;
 
   & .sidebar-logo-link {
     height: 100%;

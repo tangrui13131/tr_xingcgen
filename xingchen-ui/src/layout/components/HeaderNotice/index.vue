@@ -159,11 +159,11 @@ export default {
 }
 .notice-popover .notice-mark-all {
   font-size: 12px;
-  color: #409EFF;
+  color: #00b96b;
   font-weight: normal;
   cursor: pointer;
 }
-.notice-popover .notice-mark-all:hover { color: #2b7cc1; }
+.notice-popover .notice-mark-all:hover { color: #27ae60; }
 .notice-popover .notice-loading,
 .notice-popover .notice-empty {
   padding: 24px;
@@ -223,7 +223,7 @@ export default {
     word-break: break-word;
     img { max-width: 100%; border-radius: 4px; }
     p { margin: 0 0 1em; }
-    a { color: #409EFF; text-decoration: underline; }
+    a { color: #00b96b; text-decoration: underline; }
   }
 }
 </style>

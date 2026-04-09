@@ -3,7 +3,7 @@
 
     <panel-group @handleSetLineChartData="handleSetLineChartData" />
 
-    <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
+    <el-row class="line-chart-row" style="padding:16px 16px 0;margin-bottom:32px;">
       <line-chart :chart-data="lineChartData" />
     </el-row>
 
@@ -82,6 +82,10 @@ export default {
   padding: 32px;
   background-color: rgb(240, 242, 245);
   position: relative;
+
+  .line-chart-row {
+    background: #fff;
+  }
 
   .chart-wrapper {
     background: #fff;

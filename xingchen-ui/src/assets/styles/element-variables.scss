@@ -4,18 +4,23 @@
 **/
 
 /* theme color */
-$--color-primary: #1890ff;
-$--color-success: #13ce66;
-$--color-warning: #ffba00;
-$--color-danger: #ff4949;
-// $--color-info: #1E1E1E;
+$--color-primary: #00b96b;
+$--color-success: #52c41a;
+$--color-warning: #faad14;
+$--color-danger: #ff4d4f;
+// $--color-info: #bfbfbf;
 
-$--button-font-weight: 400;
+$--button-font-weight: 500;
 
-// $--color-text-regular: #1f2d3d;
+$--color-text-primary: #141414;
+$--color-text-regular: #595959;
+$--color-text-secondary: #8c8c8c;
+$--color-text-placeholder: #bfbfbf;
 
-$--border-color-light: #dfe4ed;
-$--border-color-lighter: #e6ebf5;
+$--border-color-base: #d9d9d9;
+$--border-color-light: #f0f0f0;
+$--border-color-lighter: #f5f5f5;
+$--border-color-extra-light: #fafafa;
 
 $--table-border: 1px solid #dfe6ec;
 

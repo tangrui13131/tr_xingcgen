@@ -28,9 +28,9 @@
             <h3 class="drawer-title">主题风格设置</h3>
           </div>
           <div class="setting-drawer-block-checbox">
-            <div class="setting-drawer-block-checbox-item" @click="handleTheme('theme-dark')">
+            <div class="setting-drawer-block-checbox-item" :class="{active: sideTheme === 'theme-dark'}" @click="handleTheme('theme-dark')">
               <img src="@/assets/images/dark.svg" alt="dark">
-              <div v-if="sideTheme === 'theme-dark'" class="setting-drawer-block-checbox-selectIcon" style="display: block;">
+              <div v-if="sideTheme === 'theme-dark'" class="setting-drawer-block-checbox-selectIcon">
                 <i aria-label="图标: check" class="anticon anticon-check">
                   <svg viewBox="64 64 896 896" data-icon="check" width="1em" height="1em" :fill="theme" aria-hidden="true" focusable="false" class="">
                     <path d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"/>
@@ -38,9 +38,9 @@
                 </i>
               </div>
             </div>
-            <div class="setting-drawer-block-checbox-item" @click="handleTheme('theme-light')">
+            <div class="setting-drawer-block-checbox-item" :class="{active: sideTheme === 'theme-light'}" @click="handleTheme('theme-light')">
               <img src="@/assets/images/light.svg" alt="light">
-              <div v-if="sideTheme === 'theme-light'" class="setting-drawer-block-checbox-selectIcon" style="display: block;">
+              <div v-if="sideTheme === 'theme-light'" class="setting-drawer-block-checbox-selectIcon">
                 <i aria-label="图标: check" class="anticon anticon-check">
                   <svg viewBox="64 64 896 896" data-icon="check" width="1em" height="1em" :fill="theme" aria-hidden="true" focusable="false" class="">
                     <path d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"/>
@@ -285,6 +285,18 @@ export default {
     font-size: 14px;
     line-height: 22px;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 14px;
+      background: var(--current-color, #00b96b);
+      margin-right: 8px;
+      border-radius: 2px;
+    }
   }
 
   .setting-drawer-block-checbox {
@@ -293,16 +305,29 @@ export default {
     align-items: center;
     margin-top: 10px;
     margin-bottom: 20px;
+    gap: 16px;
 
     .setting-drawer-block-checbox-item {
       position: relative;
-      margin-right: 16px;
-      border-radius: 2px;
+      border-radius: 4px;
       cursor: pointer;
+      padding: 2px;
+      border: 2px solid transparent;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+
+      &.active {
+        border-color: var(--current-color, #00b96b);
+      }
 
       img {
         width: 48px;
         height: 48px;
+        border-radius: 2px;
+        display: block;
       }
 
       .setting-drawer-block-checbox-selectIcon {
@@ -311,18 +336,21 @@ export default {
         right: 0;
         width: 100%;
         height: 100%;
-        padding-top: 15px;
-        padding-left: 24px;
-        color: #1890ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.05);
+        color: var(--current-color, #00b96b);
         font-weight: 700;
         font-size: 14px;
+        border-radius: 2px;
       }
     }
   }
 }
 
 .drawer-container {
-  padding: 20px;
+  padding: 24px;
   font-size: 14px;
   line-height: 1.5;
   word-wrap: break-word;
@@ -332,16 +360,20 @@ export default {
     color: rgba(0, 0, 0, .85);
     font-size: 14px;
     line-height: 22px;
+    font-weight: bold;
   }
 
   .drawer-item {
     color: rgba(0, 0, 0, .65);
     font-size: 14px;
     padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .drawer-switch {
-    float: right
+    // float: right
   }
 }
 
